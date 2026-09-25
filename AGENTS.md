@@ -57,7 +57,10 @@ Itrium's Homebrew tap. Each file in `Casks/` installs one of Itrium's applicatio
 GitHub release: `brew install itriumid/tap/<cask>`. Homebrew maps `itriumid/tap` to this
 repository because its name starts with `homebrew-`, so don't rename it.
 
-- **Updating a cask for a new release:** change `version` and `sha256`. Take the hash from the
+- **Honk's cask updates itself.** Publishing a Honk release runs Honk's `homebrew.yml`, which
+  opens a `chore/honk-X-Y-Z` pull request here with the new `version` and `sha256`. It edits
+  those two lines with `sed`, so keep them as `version "X.Y.Z"` and a 64-character `sha256`.
+- **Updating a cask by hand:** change `version` and `sha256`. Take the hash from the
   published asset, never from a local build: download it with
   `gh release download v<version> -R itriumid/<app> -p '<file>'`, then run `shasum -a 256`.
   The release's API response carries the same value as `digest`, which is a good cross-check.

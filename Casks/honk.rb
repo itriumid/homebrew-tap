@@ -1,6 +1,6 @@
 cask "honk" do
-  version "0.2.1"
-  sha256 "f30aa3f44fd0043970451956aeda9323c79eefd17af96085653fc69177b1c5fe"
+  version "0.3.0"
+  sha256 "de08dfc2a155db1be060e1fcf4252c328f945f206f12bebf2e62fcbe63ad482f"
 
   url "https://github.com/itriumid/honk/releases/download/v#{version}/Honk_#{version}_universal.dmg"
   name "Honk"

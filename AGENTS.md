@@ -57,9 +57,11 @@ Itrium's Homebrew tap. Each file in `Casks/` installs one of Itrium's applicatio
 GitHub release: `brew install itriumid/tap/<cask>`. Homebrew maps `itriumid/tap` to this
 repository because its name starts with `homebrew-`, so don't rename it.
 
-- **Honk's cask updates itself.** Publishing a Honk release runs Honk's `homebrew.yml`, which
-  opens a `chore/honk-X-Y-Z` pull request here with the new `version` and `sha256`. It edits
-  those two lines with `sed`, so keep them as `version "X.Y.Z"` and a 64-character `sha256`.
+- **Each cask updates itself.** Publishing a Honk or Hindsight release runs that application's
+  `homebrew.yml`, which opens a `chore/<cask>-X-Y-Z` pull request here with the new `version`
+  and `sha256`. It edits those two lines with `sed`, so keep them as `version "X.Y.Z"` and a
+  64-character `sha256`. A new application's first cask is added by hand, since there's nothing
+  to update yet.
 - **Updating a cask by hand:** change `version` and `sha256`. Take the hash from the
   published asset, never from a local build: download it with
   `gh release download v<version> -R itriumid/<app> -p '<file>'`, then run `shasum -a 256`.
@@ -74,4 +76,8 @@ repository because its name starts with `homebrew-`, so don't rename it.
   it once the application is signed and notarized.
 - **`zap`** lists every folder the application writes to, including ones under earlier bundle
   identifiers (Honk used `id.zakir.honk` before `id.itrium.honk`).
+- **Anything that would outlive the application goes in `uninstall`, not only `zap`.**
+  Hindsight's launch agent (`~/Library/LaunchAgents/Hindsight.plist`, from "Start Hindsight when
+  I log in") is removed by `uninstall launchctl:`, so a plain `brew uninstall` doesn't leave it
+  pointing at a deleted application. Menu bar applications are quit first (`uninstall quit:`).
 - The README is public copy in Itrium's voice: see `.handbook/conventions/reference/brand.md`.

@@ -12,6 +12,7 @@ keeps everything here up to date along with the rest of your casks.
 | Cask   | What it is                                                                                        |
 | ------ | ------------------------------------------------------------------------------------------------- |
 | `honk` | [Honk](https://github.com/itriumid/honk), a soundboard with global hotkeys and a menu bar popover |
+| `hindsight` | [Hindsight](https://github.com/itriumid/hindsight), which keeps the last few minutes of what was said in memory, so you can save them |
 
 ## Our applications aren't signed yet
 
@@ -25,4 +26,7 @@ remove the quarantine flag in Terminal. Each application's README explains it in
 ```sh
 brew uninstall honk          # removes the application and keeps your library
 brew uninstall --zap honk    # also deletes your library and settings
+
+brew uninstall hindsight          # removes the application and launch at login, keeps your clips
+brew uninstall --zap hindsight    # also deletes its settings; your clips stay where you saved them
 ```

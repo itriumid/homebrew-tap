@@ -18,7 +18,11 @@ cask "hindsight" do
 
   # Hindsight records from the menu bar, so it's quit before it's removed. Its launch agent,
   # created by "Start Hindsight when I log in", would otherwise be left pointing at a deleted app.
-  uninstall launchctl: "Hindsight",
+  # 0.1.0 named it "Hindsight"; later versions name it after the identifier.
+  uninstall launchctl: [
+              "Hindsight",
+              "id.itrium.hindsight",
+            ],
             quit:      "id.itrium.hindsight"
 
   zap trash: [
@@ -27,6 +31,7 @@ cask "hindsight" do
     "~/Library/Caches/id.itrium.hindsight",
     "~/Library/HTTPStorages/id.itrium.hindsight",
     "~/Library/LaunchAgents/Hindsight.plist",
+    "~/Library/LaunchAgents/id.itrium.hindsight.plist",
     "~/Library/Saved Application State/id.itrium.hindsight.savedState",
     "~/Library/WebKit/hindsight",
     "~/Library/WebKit/id.itrium.hindsight",

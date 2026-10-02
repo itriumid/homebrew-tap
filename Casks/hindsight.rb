@@ -1,6 +1,6 @@
 cask "hindsight" do
-  version "0.1.0"
-  sha256 "ea2ee70a372b5eaf1f0a7026c038b73bf3068e6bfdd99f2c0d83fd03e389510b"
+  version "0.2.0"
+  sha256 "0a0669c20e1c48db7ad6f8abc78b8db1dbd1d7169fc95f1967b99175198f5f74"
 
   url "https://github.com/itriumid/hindsight/releases/download/v#{version}/Hindsight_#{version}_universal.dmg"
   name "Hindsight"

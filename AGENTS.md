@@ -51,14 +51,23 @@ Before acting on a task in this table, read the file it points to. The others ca
 | Unsure what an agent may write or do here (catch-all)                                         | `.handbook/conventions/rules/ai-agents.md`           |
 | Bumping a dependency or runtime version, or naming things                                     | `.handbook/conventions/rules/engineering.md`         |
 | Labeling a pull request                                                                       | `.handbook/conventions/reference/labels.md`          |
-| Choosing colors, or designing anything visual                                                 | `.handbook/conventions/reference/brand.md`           |
 | Something already went wrong — a leak, a bad push, a weakened check                           | `.handbook/conventions/reference/agent-incidents.md` |
-| Wondering why a cross-project technology choice was made                                      | `.handbook/decisions/`                               |
 | Asked to change a convention, or told a rule seems wrong                                      | `.handbook/conventions/background/`                  |
 
 `.handbook/conventions/background/` is rationale, not instructions. Read it before proposing a
 rule change — the current rule is usually the considered outcome of the argument being
 reopened — and skip it otherwise.
+
+## Itrium projects
+
+This is one of Itrium's projects, so Itrium's part of the handbook applies on top of the
+conventions above.
+
+| Doing this                                                 | Read                              |
+| ---------------------------------------------------------- | --------------------------------- |
+| Writing prose, comments or names, or building an interface | `.handbook/itrium/engineering.md` |
+| Choosing colors, or designing anything visual              | `.handbook/itrium/brand.md`       |
+| Wondering why a cross-project technology choice was made   | `.handbook/itrium/decisions/`     |
 
 ## This repository
 
@@ -89,4 +98,4 @@ repository because its name starts with `homebrew-`, so don't rename it.
   Hindsight's launch agent (`~/Library/LaunchAgents/Hindsight.plist`, from "Start Hindsight when
   I log in") is removed by `uninstall launchctl:`, so a plain `brew uninstall` doesn't leave it
   pointing at a deleted application. Menu bar applications are quit first (`uninstall quit:`).
-- The README is public copy in Itrium's voice: see `.handbook/conventions/reference/brand.md`.
+- The README is public copy in Itrium's voice: see `.handbook/itrium/brand.md`.
